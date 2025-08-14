@@ -25,7 +25,7 @@ mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
 bind-address: "*"
-ipv6: false
+ipv6: true
 unified-delay: true
 tcp-concurrent: true
 # interface-name: enp6s18
@@ -109,6 +109,8 @@ dns:
     - "+cbank.abchina.com"
     - "+.bing.com"
     - "+.lefoo.cn"
+    - '*.tailscale.com'
+    - '*.zerotier.com'
   default-nameserver:
     - 223.5.5.5
   proxy-server-nameserver:
@@ -168,6 +170,41 @@ proxy-groups:
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
+  - DOMAIN-SUFFIX,dbankcdn.com,DIRECT
+  - DOMAIN-SUFFIX,hc-cdn.com,DIRECT
+  - DOMAIN-SUFFIX,hicloud.com,DIRECT
+  - DOMAIN-SUFFIX,huaweicloud.com,DIRECT
+  - DOMAIN-SUFFIX,hwccpc.com,DIRECT
+  - DOMAIN-SUFFIX,dbankcloud.cn,DIRECT
+  - DOMAIN-SUFFIX,hilink.com,DIRECT
+  - DOMAIN-SUFFIX,dualstack.cn,DIRECT
+  - DOMAIN-SUFFIX,myhuaweicloud.cn,DIRECT
+  - DOMAIN-SUFFIX,dualstack.com,DIRECT
+  - DOMAIN-SUFFIX,myhuaweicloud.ccom,DIRECT
+  - DOMAIN-SUFFIX,abchina.com,DIRECT
+  - DOMAIN-SUFFIX,95599.cn,DIRECT
+  - DOMAIN-SUFFIX,abchina.com.cn,DIRECT
+  - DOMAIN,cn.bing.com,DIRECT
+  - DOMAIN,kasikornbank.com,DIRECT
+  - DOMAIN-SUFFIX,kasikornbank.com,DIRECT
+  - DOMAIN-SUFFIX,hsbc.com.hk,DIRECT
+  - DOMAIN-SUFFIX,hsbc.com,DIRECT
+  - DOMAIN-SUFFIX,tailscale.com,DIRECT
+  - DOMAIN-SUFFIX,zerotier.com,DIRECT
+  - DOMAIN-KEYWORD,tailscale,DIRECT
+  - PROCESS-NAME,tailscaled,DIRECT
+  - DOMAIN-SUFFIX,zoho.com,DIRECT
+  - DOMAIN-SUFFIX,longmerchant-in.com,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,10.147.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR6,fd7a:115c:a1e0::/48,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
   - RULE-SET,private_ip,直连
   - RULE-SET,private_domain,直连
   - DOMAIN-SUFFIX,copilot.microsoft.com,🤖 国外AI
