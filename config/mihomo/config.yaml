@@ -40,11 +40,11 @@ profile:
 
 # 为防止使用插件朋友遇到面板问题，我注释掉了此模块。
 # 跑裸核朋友自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui
-#external-controller: 0.0.0.0:9090
-#secret: ""
-#external-ui: "/etc/mihomo/ui"
-#external-ui-name: zashboard
-#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: ui
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 嗅探
 sniffer:
@@ -83,58 +83,100 @@ dns:
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - "rule-set:private_domain,cn_domain"
+    - "geosite:connectivity-check"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "time.*.com"
     - "+.market.xiaomi.com"
+    - "+.lan"
+    - "+.local"
+    - "+.in-addr.arpa"
+    - "localhost.ptlogin2.qq.com"
+    - "localhost.sec.qq.com"
+    - "localhost.work.weixin.qq.com"
+    - "+.kasikornbank.com"
+    - "+.hsbc.com.hk"
+    - "+.hsbc.com"
+    - "+.abchina.com"
+    - "+95599.cn"
+    - "+corporbank.abchina.com"
+    - "+.abchina.com.cn"
+    - "+ebank.abchina.com.cn"
+    - "+cbank.abchina.com.cn"
+    - "+ubank.abchina.com.cn"
+    - "+ebank.abchina.com"
+    - "+ubank.abchina.com"
+    - "+cbank.abchina.com"
+    - "+.bing.com"
+    - "+.lefoo.cn"
   default-nameserver:
     - 223.5.5.5
   proxy-server-nameserver:
     - https://223.5.5.5/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
- 
+    - 210.21.196.6
+    - 116.116.116.116
+    - 120.80.88.88
+    - 221.5.88.88
+  nameserver-policy:
+    'geosite:category-ads':'rcode://refused'
+    
 # 出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。
 # 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
-  - {name: 🚀 默认代理, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 📹 YouTube, type: select, proxies: [🔯 美国故转, 🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🍀 Google, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🤖 ChatGPT, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🐬 OneDrive, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🪟 Microsoft, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🎵 TikTok, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 📲 Telegram, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🎥 NETFLIX, type: select, proxies: [🔯 狮城故转, 🔯 香港故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 💶 PayPal, type: select, proxies: [🔯 日本故转, 🔯 香港故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
-  - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
-  - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
-  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
+  #分流策略
+  - {name: 🚀 默认代理, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 📹 YouTube, type: select, proxies: [🔯 美国故转, 🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🍀 Google, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🤖 国外AI, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🐬 OneDrive, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🪟 Microsoft, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🎵 TikTok, type: select, proxies: [🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 📲 通讯社交, type: select, proxies: [🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🔯 狮城故转, 🔯 香港故转, 🔯 日本故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 💶 PayPal, type: select, proxies: [🔯 日本故转, 🔯 香港故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 🔯 香港故转, 🔯 日本故转, 🔯 狮城故转, 🔯 美国故转, 🔯 台湾故转, 🔯 韩国故转, 🔯 德国故转, 🔯 加拿大故转, 🔯 其他故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 台湾自动, ♻️ 韩国自动, ♻️ 德国自动, ♻️ 加拿大自动, ♻️ 其他自动, 🏳️‍🌈 全局自动, 🏠 全局手动, 直连]}
+  #故转组
   - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
-  - {name: 🔯 狮城故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(台|日|韩|深|美)).)*$"}
-  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|韩|新|日)).)*$" }
+  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: 🔯 狮城故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
+  - {name: 🔯 美国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 🔯 台湾故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)).*$"}
+  - {name: 🔯 韩国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)).*$"}
+  - {name: 🔯 德国故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|德|DE|GER|Germany|Deutsch|Deutschland|de)).*$"}
+  - {name: 🔯 加拿大故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(加拿大|CA|ca|CA|Canada)).*$"}
+  - {name: 🔯 其他故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连|港|HK|hk|Hong Kong|HongKong|hongkong|深港|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|(?<!尼|-)日|JP|Japan|🇯🇵|新加坡|坡|狮城|SG|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea|KOR|德国|德|DE|GER|Germany|Deutsch|Deutschland|de|加拿大|Canada|渥太华|温哥华|卡尔加里|CA)).)*$"}
+
+ #自动组
   - {name: ♻️ 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ 狮城自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
-  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
-  - {name: 🌐 全部节点, type: select, include-all: true}
+  - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: ♻️ 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)).*$"}
+  - {name: ♻️ 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea)).*$"}
+  - {name: ♻️ 德国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(德国|德|DE|GER|Germany|Deutsch|Deutschland|de)).*$"}
+  - {name: ♻️ 加拿大自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(加拿大|CA|ca|CA|Canada)).*$"}
+  - {name: ♻️ 其他自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连|港|HK|hk|Hong Kong|HongKong|hongkong|深港|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|(?<!尼|-)日|JP|Japan|🇯🇵|新加坡|坡|狮城|SG|Singapore|广美|美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States|广台|台湾|台灣|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|广韩|韩国|韓國|KR|首尔|春川|🇰🇷|Korea|KOR|德国|德|DE|GER|Germany|Deutsch|Deutschland|de|加拿大|Canada|渥太华|温哥华|卡尔加里|CA)).)*$"}
+
+  #全局组
+  - {name: 🏳️‍🌈 全局自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
+  - {name: 🏠 全局手动, type: select, include-all: true}
 
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
   - RULE-SET,private_ip,直连
   - RULE-SET,private_domain,直连
+  - DOMAIN-SUFFIX,copilot.microsoft.com,🤖 国外AI
+  - DOMAIN-SUFFIX,edgeservices.bing.com,🤖 国外AI
+  - DOMAIN-SUFFIX,sentry.io,🤖 国外AI
+  - DOMAIN-SUFFIX,intercom.io,🤖 国外AI
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,proxylite,🚀 默认代理
-  - RULE-SET,ai,🤖 ChatGPT
+  - RULE-SET,ai,🤖 国外AI
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
@@ -142,7 +184,9 @@ rules:
   - RULE-SET,microsoft_domain,🪟 Microsoft
   - RULE-SET,apple_domain,直连
   - RULE-SET,tiktok_domain,🎵 TikTok
-  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,telegram_domain,📲 通讯社交
+  - RULE-SET,communication_domain,📲 通讯社交
+  - RULE-SET,media_domain,📲 通讯社交
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,apple_ip,直连,no-resolve
@@ -151,6 +195,7 @@ rules:
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,geolocation-!cn,🚀 默认代理
   - RULE-SET,cn_domain,直连
+  - RULE-SET,geolocation-cn,直连
   - RULE-SET,cn_ip,直连
   - MATCH,🐟 漏网之鱼
 
@@ -175,7 +220,10 @@ rule-providers:
   apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
   speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
   tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
+  communication_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-communication.mrs"}
+  media_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-social-media-!cn.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  geolocation-cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   
   private_ip: {<<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"}
