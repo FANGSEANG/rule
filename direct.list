@@ -2,6 +2,12 @@
 # Generated from rule/Custom_Direct.list
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # SOURCE: https://github.com/Aethersailor/Custom_OpenClash_Rules/blob/main/rule/Custom_Direct.list
+
+# NAME: Custom_Direct
+# AUTHOR: Aethersailor
+# REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
+# 强制直连域名列表，来自个人收集
+
 # 域名后缀匹配
 
 
