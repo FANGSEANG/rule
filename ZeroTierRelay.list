@@ -1,9 +1,8 @@
 # Zerotier Relay Servers
 
-# DST-PORT端口
-DST-PORT,9993
-
 # Domain
 DOMAIN-SUFFIX,cdn77.com
 DOMAIN,planet.zerotier.com
 
+# DST-PORT端口
+DST-PORT,9993
