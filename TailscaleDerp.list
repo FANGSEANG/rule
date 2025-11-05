@@ -1,8 +1,11 @@
 # Tailscale DERP Servers
 
-# DST-PORT端口
-DST-PORT,41641
+# 进程
+PROCESS-NAME,tailscaled
 
 # Domain
 DOMAIN-REGEX,^derp\d*-?.*\.tailscale\.com$
 DOMAIN-REGEX,^derp.*tailscale\.com
+
+# DST-PORT端口
+DST-PORT,41641
