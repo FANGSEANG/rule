@@ -7,16 +7,3 @@ DST-PORT,9993
 DOMAIN-SUFFIX,cdn77.com
 DOMAIN,planet.zerotier.com
 
-# 已知的IPv4（会变动，推荐以匹配域名为主）
-IP-CIDR,103.195.103.0/24,no-resolve
-IP-CIDR,79.127.159.0/24,,no-resolve
-IP-CIDR,50.7.252.0/24,no-resolve
-IP-CIDR,185.180.12.0/24,no-resolve
-IP-CIDR,185.180.13.0/24,no-resolve
-IP-CIDR,185.180.14.0/24,no-resolve
-IP-CIDR,185.180.15.0/24,no-resolve
-
-# 已知的IPv6（会变动，推荐以匹配域名为主）
-IP-CIDR6,2001:19f0:7001::/48,no-resolve
-IP-CIDR6,2604:a880:cad:d0::/64,no-resolve
-IP-CIDR6,2a02:6ea0:c700::/40,no-resolve
