@@ -227,19 +227,6 @@ na.b.g-tun.com
 +.xn--ngstr-lra8j.com
 
 # =============================
-# GeoSite
-# =============================
-geosite:connectivity-check
-geosite:private
-geosite:apple-cn
-geosite:microsoft@cn
-geosite:google-cn
-geosite:bing
-geosite:category-games
-geosite:speedtest
-geosite:cn
-
-# =============================
 # 杂项（用户自定义）
 # =============================
 shark007.net
@@ -249,6 +236,7 @@ local.adguard.org
 +.pub.3gppnetwork.org
 +.lefoo.cn
 +.vipmro.com
+
 
 
 
