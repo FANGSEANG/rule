@@ -104,16 +104,6 @@ ne.wo.cn
 *.jegotrip.com.cn
 *.icitymobile.mobi
 
-# ===== 游戏平台（保留，均为境外或需单独处理） =====
-+.srv.nintendo.net
-*.n.n.srv.nintendo.net
-+.cdn.nintendo.net
-+.stun.playstation.net
-xbox.*.*.microsoft.com
-*.*.xboxlive.com
-xbox.*.microsoft.com
-xnotify.xboxlive.com
-
 # ===== 暴雪 / 战网 / Wargaming（保留） =====
 +.battle.net
 +.battlenet.com.cn
@@ -161,6 +151,7 @@ local.adguard.org
 +.pub.3gppnetwork.org
 +.lefoo.cn
 +.vipmro.com
+
 
 
 
