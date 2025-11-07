@@ -1,6 +1,4 @@
-# =============================
-# 基础禁止 fake
-# =============================
+# ===== 本地 / 保留域名 =====
 *.lan
 *.local
 *.localdomain
@@ -11,25 +9,19 @@
 *.home.arpa
 *.direct
 
-# =============================
-# Windows / Microsoft
-# =============================
+# ===== Windows / Microsoft =====
 +.msftconnecttest.com
 +.msftncsi.com
 login.live.com
 login.microsoftonline.com
 device.auth.*.microsoft.com
 
-# =============================
-# Apple / iCloud / Captive Portal
-# =============================
+# ===== Apple / iCloud / Captive Portal =====
 gsa.apple.com
 captive.apple.com
 setup.icloud.com
 
-# =============================
-# 时间同步（完整 NTP 补丁）
-# =============================
+# ===== 时间同步 / NTP（保留全部以防需要真实解析） =====
 time.*.com
 time.*.gov
 time.*.edu.cn
@@ -56,9 +48,7 @@ ntp7.*.com
 time1.cloud.tencent.com
 time.apple.com.edgekey.net
 
-# =============================
-# DNS 服务
-# =============================
+# ===== DNS 服务（保留：因为是境外 DNS） =====
 dns.google
 dns.google.com
 dns64.dns.google
@@ -67,15 +57,12 @@ cloudflare-dns.com
 dns64.cloudflare-dns.com
 resolver1.opendns.com
 
-# =============================
-# Tailscale / ZeroTier
-# =============================
+# ===== Tailscale / ZeroTier =====
 +.tailscale.com
 +.zerotier.com
+tailscale.com
 
-# =============================
-# 大型应用 / 网络探测
-# =============================
+# ===== 大型应用 / 网络探测 / TURN/STUN 等 =====
 cable.auth.com
 network-test.debian.org
 detectportal.firefox.com
@@ -83,53 +70,12 @@ global.turn.twilio.com
 global.stun.twilio.com
 connectivitycheck.gstatic.com
 
-# =============================
-# 腾讯 / QQ / 音乐
-# =============================
-localhost.ptlogin2.qq.com
-localhost.sec.qq.com
-+.qq.com
-+.tencent.com
-y.qq.com
-*.y.qq.com
-streamoc.music.tc.qq.com
-mobileoc.music.tc.qq.com
-isure.stream.qqmusic.qq.com
-dl.stream.qqmusic.qq.com
-aqqmusic.tc.qq.com
-amobile.music.tc.qq.com
-
-# =============================
-# 网易 / UU / Netease
-# =============================
-music.163.com
-*.music.163.com
-*.126.net
-+.uu.163.com
-ps.res.netease.com
-
-# =============================
-# 音乐平台（太合 / 酷狗 / 酷我 / 咪咕）
-# =============================
-musicapi.taihe.com
-music.taihe.com
-songsearch.kugou.com
-trackercdn.kugou.com
-+.kuwo.cn
-*.xiami.com
-*.music.migu.cn
-music.migu.cn
-
-# =============================
-# JOOX
-# =============================
+# ===== JOOX（国际/东南亚） =====
 api-jooxtt.sanook.com
 api.joox.com
 joox.com
 
-# =============================
-# 运营商 / 认证
-# =============================
+# ===== 运营商 / 认证 / 运营商相关（保留） =====
 *.cmpassport.com
 open.e.189.cn
 opencloud.wostore.cn
@@ -142,9 +88,7 @@ enrichgw.10010.com
 ne.wo.cn
 *.ydstatic.com
 
-# =============================
-# 银行 / 金融
-# =============================
+# ===== 银行 / 金融（全部保留） =====
 +.kasikornbank.com
 +.hsbc.com.hk
 +.hsbc.com
@@ -156,15 +100,11 @@ ne.wo.cn
 +.cmbimg.com
 +.sc.com
 
-# =============================
-# 旅行 / 票务
-# =============================
+# ===== 旅行 / 票务 =====
 *.jegotrip.com.cn
 *.icitymobile.mobi
 
-# =============================
-# Nintendo / PS / Xbox
-# =============================
+# ===== 游戏平台（保留，均为境外或需单独处理） =====
 +.srv.nintendo.net
 *.n.n.srv.nintendo.net
 +.cdn.nintendo.net
@@ -174,9 +114,7 @@ xbox.*.*.microsoft.com
 xbox.*.microsoft.com
 xnotify.xboxlive.com
 
-# =============================
-# 暴雪 / 战网 / Wargaming
-# =============================
+# ===== 暴雪 / 战网 / Wargaming（保留） =====
 +.battle.net
 +.battlenet.com.cn
 +.wotgame.cn
@@ -184,41 +122,30 @@ xnotify.xboxlive.com
 +.wowsgame.cn
 +.wargaming.net
 
-# =============================
-# stun / 端口打洞
-# =============================
+# ===== stun / 端口打洞（保留以免打洞失败） =====
 stun.*.*
 stun.*.*.*
-+.stun.*.*
-+.stun.*.*.*
-+.stun.*.*.*.*
++.stun.*.*        # 保留通配以便匹配各种 stun 子域
++.stun.*.*.* 
++.stun.*.*.*.* 
 +.stun.*.*.*.*.*
 
-# =============================
-# 家用路由厂商
-# =============================
+# ===== 家用路由厂商（心跳/固件检查） =====
 heartbeat.belkin.com
 *.linksys.com
 *.linksyssmartwifi.com
 *.router.asus.com
 
-# =============================
-# 大型视频平台
-# =============================
+# ===== 大型视频 / 国际 CDN（保留，国内站点已由 geosite:cn 覆盖并被移除） =====
 +.nflxvideo.net
-*.mcdn.bilivideo.cn
-+.media.dssott.com    # Disney+
++.media.dssott.com
 
-# =============================
-# Active Directory（必要保留）
-# =============================
+# ===== Active Directory（保留） =====
 PDC._msDCS.*.*
 DC._msDCS.*.*
 GC._msDCS.*.*
 
-# =============================
-# Google
-# =============================
+# ===== Google / 其他国际服务（保留） =====
 lens.l.google.com
 stun.l.google.com
 na.b.g-tun.com
@@ -226,9 +153,7 @@ na.b.g-tun.com
 +.googleapis.cn
 +.xn--ngstr-lra8j.com
 
-# =============================
-# 杂项（用户自定义）
-# =============================
+# ===== 杂项（用户自定义，未被 geosite:cn 覆盖） =====
 shark007.net
 local.adguard.org
 +.sandai.net
