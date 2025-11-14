@@ -9,3 +9,4 @@ DOMAIN-REGEX,^derp.*tailscale\.com
 
 # DST-PORT端口
 DST-PORT,41641
+DST-PORT,3478
