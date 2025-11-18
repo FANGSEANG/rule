@@ -205,16 +205,28 @@ DOMAIN-SUFFIX,ft07.com
 # 以下是准备向 GeoSite 上游仓库提交 PR 的国内冷门域名，收录后会注释对应内容
 # ---------------------------------------
 # 以下域名待提交 PR
-# add by Telegram user: young / Date: 2025-11-03 23:58:00
-DOMAIN-SUFFIX,xiberia.net
-# add by Telegram user: Blunt / Date: 2025-11-03 23:27:53
-DOMAIN-SUFFIX,jiqw.com
-# 顶晟科技 / add by Telegram user: 雪菜 / Date: 2025-11-02 21:45:17
-DOMAIN-SUFFIX,dskj-ops.com
-# 视频下载网站 / add by Telegram user: 尼古拉斯 / Date: 2025-11-02 11:00:56
-DOMAIN-SUFFIX,jfjt.cc
-# add by Telegram user: 尼古拉斯 / Date: 2025-11-02 10:53:57
-DOMAIN-SUFFIX,atticus.vip
+# easytier服务 / add by Telegram user: hvccff / Date: 2025-11-17 08:22:05
+DOMAIN-SUFFIX,easytier.top
+# add by Telegram user: Aethersailor / Date: 2025-11-16 18:39:46
+DOMAIN-SUFFIX,tulipsport.com
+# add by Telegram user: Aethersailor / Date: 2025-11-16 18:28:47
+DOMAIN-SUFFIX,3d-apollo.com
+# add by Telegram user: lu / Date: 2025-11-15 20:39:15
+DOMAIN-SUFFIX,ztytech.com
+# bark默认服务器的域名 / add by Telegram user: Shu / Date: 2025-11-15 18:41:59
+DOMAIN-SUFFIX,day.app
+# 大象駕駛 / add by Telegram user: Joe / Date: 2025-11-15 15:05:31
+DOMAIN-SUFFIX,yixc.com
+# 表答 / add by Telegram user: Joe / Date: 2025-11-14 21:24:45
+DOMAIN-SUFFIX,biaoda.me
+# add by Telegram user: lu / Date: 2025-11-14 21:02:21
+DOMAIN-SUFFIX,nicezhuanye.com
+# 中国资讯门户 / add by Telegram user: Joe / Date: 2025-11-14 11:14:30
+DOMAIN-SUFFIX,chinatle.com
+# 阿里云服务 / add by Telegram user: 哆啦A梦 / Date: 2025-11-14 11:00:52
+DOMAIN-SUFFIX,opentrust.net
+# 长白山景区网站 / add by Telegram user: Coco / Date: 2025-11-13 17:55:27
+DOMAIN-SUFFIX,aichangbaishan.com
 
 # Merged LAN Rules
 DOMAIN-SUFFIX,acl4.ssr
