@@ -270,6 +270,29 @@ DOMAIN,router.asus.com
 DOMAIN,setmeup.arubanetworks.com
 DOMAIN,www.asusrouter.com
 
+# ====== 国内测速直连 ======
+DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,ookla.com
+DOMAIN-SUFFIX,fast.com
+
+DOMAIN-SUFFIX,huaban.com
+DOMAIN-SUFFIX,huaban-speedtest.com
+
+DOMAIN-SUFFIX,10010.com
+DOMAIN-SUFFIX,10000.cn
+DOMAIN-SUFFIX,189.cn
+
+DOMAIN-SUFFIX,ctyun.cn
+DOMAIN-SUFFIX,telecomtest.cn
+DOMAIN-SUFFIX,unicomtest.cn
+
+# 中国测速常用网段直连
+IP-CIDR,117.78.0.0/16,no-resolve
+IP-CIDR,183.194.0.0/16,no-resolve
+IP-CIDR,221.179.0.0/16,no-resolve
+IP-CIDR,202.97.0.0/16,no-resolve
+IP-CIDR,58.60.0.0/16,no-resolve
+
 # 其他分类
 DOMAIN-SUFFIX,cn.bing.com
 DOMAIN-SUFFIX,vipmro.com
