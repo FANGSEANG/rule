@@ -1,271 +1,134 @@
 # =========================
-#  LAN / 本地域名（private 未覆盖部分）
+#  LAN / 本地域名
 # =========================
-- "*.example"
-- "*.invalid"
-- "*.test"
-- "*.direct"
+  - "*.example"
+  - "*.invalid"
+  - "*.test"
 
 # =========================
-#  系统探测 / 网络连通性（connectivity-check 未覆盖部分）
+#  系统关键域名（必须真实 IP）
 # =========================
-- "cable.auth.com"
-- "network-test.debian.org"
-- "resolver1.opendns.com"
-- "app.yinxiang.com"
-- "injections.adguard.org"
-- "clients3.google.com"
-- "clients4.google.com"
-- "clients5.google.com"
-- "clients6.google.com"
+  - "captive.apple.com"
+  - "cable.auth.com"
+  - "network-test.debian.org"
+  - "resolver1.opendns.com"
 
 # =========================
-#  DNS 服务（无 geosite 覆盖）
+#  DNS 服务（避免 fake-ip 干扰）
 # =========================
-- "dns.google"
-- "dns.google.com"
-- "dns64.dns.google"
-- "cloudflare-dns.com"
-- "1dot1dot1dot1.cloudflare-dns.com"
-- "dns64.cloudflare-dns.com"
-- "resolver2.opendns.com"
-- "dns.quad9.net"
-- "dns9.quad9.net"
+  - "dns.google"
+  - "cloudflare-dns.com"
+  - "dns.quad9.net"
+  - "dns9.quad9.net"
 
 # =========================
 #  VPN / Tailscale / ZeroTier / WireGuard
 # =========================
-- "+.tailscale.com"
-- "+.ts.net"
-- "+.zerotier.com"
-- "controlplane.tailscale.com"
-- "login.tailscale.com"
-- "wg.cloudflare.com"
+  - "+.tailscale.com"
+  - "+.ts.net"
+  - "+.zerotier.com"
+  - "controlplane.tailscale.com"
+  - "login.tailscale.com"
+  - "wg.cloudflare.com"
 
 # =========================
-#  运营商认证 / IMS / VoWiFi（cn 未覆盖部分）
+#  运营商 IMS / VoWiFi / 认证（必须真实 IP）
 # =========================
-- "*.cmpassport.com"
-- "open.e.189.cn"
-- "opencloud.wostore.cn"
-- "id.mail.wo.cn"
-- "mdn.open.wo.cn"
-- "hmrz.wo.cn"
-- "nishub1.10010.com"
-- "enrichgw.10010.com"
-- "*.wosms.cn"
-- "*.jegotrip.com.cn"
-- "*.icitymobile.mobi"
-- "id6.me"
-- "*.ydstatic.com"
-- "+.pub.3gppnetwork.org"
-- "+.ims.mnc*.*.3gppnetwork.org"
-- "+.epdg.epc.mnc*.*.3gppnetwork.org"
+  - "*.cmpassport.com"
+  - "open.e.189.cn"
+  - "opencloud.wostore.cn"
+  - "id.mail.wo.cn"
+  - "mdn.open.wo.cn"
+  - "hmrz.wo.cn"
+  - "nishub1.10010.com"
+  - "enrichgw.10010.com"
+  - "*.wosms.cn"
+  - "id6.me"
+  - "+.pub.3gppnetwork.org"
+  - "+.ims.mnc*.*.3gppnetwork.org"
+  - "+.epdg.epc.mnc*.*.3gppnetwork.org"
 
 # =========================
-#  银行 / 金融（cn 未覆盖部分）
+#  国际银行 / 金融（必须真实 IP）
 # =========================
-- "+.kasikornbank.com"
-- "+.hsbc.com.hk"
-- "+.hsbc.com"
-- "+.abchina.com"
-- "+.abchina.com.cn"
-- "+.sc.com"
-- "*.10099.com.cn"
-- "*.microdone.cn"
-- "+.citibank.com"
-- "+.citi.com"
-- "+.visa.com"
-- "+.mastercard.com"
+  - "+.kasikornbank.com"
+  - "+.hsbc.com.hk"
+  - "+.hsbc.com"
+  - "+.sc.com"
+  - "+.citibank.com"
+  - "+.citi.com"
+  - "+.visa.com"
+  - "+.mastercard.com"
+  - "+.boc.com.hk"
+  - "+.bochk.com"
+  - "+.boc.hk"
 
 # =========================
-#  时间同步 / NTP（无 geosite 覆盖）
+#  时间同步 / NTP（必须真实 IP）
 # =========================
-- "time.*.com"
-- "time.*.gov"
-- "time.*.edu.cn"
-- "time.*.apple.com"
-- "time-ios.apple.com"
-- "time1.*.com"
-- "time2.*.com"
-- "time3.*.com"
-- "time4.*.com"
-- "time5.*.com"
-- "time6.*.com"
-- "time7.*.com"
-- "ntp.*.com"
-- "ntp1.*.com"
-- "ntp2.*.com"
-- "ntp3.*.com"
-- "ntp4.*.com"
-- "ntp5.*.com"
-- "ntp6.*.com"
-- "ntp7.*.com"
-- "*.time.edu.cn"
-- "*.ntp.org.cn"
-- "+.pool.ntp.org"
-- "time1.cloud.tencent.com"
+  - "+.pool.ntp.org"
+  - "time-ios.apple.com"
+  - "time1.cloud.tencent.com"
 
 # =========================
-#  国内测速（speedtest 未覆盖部分）
+#  游戏平台 / 游戏服务（仅保留必要项）
 # =========================
-- "*.huaban.com"
-- "*.huaban-speedtest.com"
-- "*.telecomtest.cn"
-- "*.unicomtest.cn"
-- "*.ctyun.cn"
-- "speedtest.cn"
-- "speedtest.net"
-- "*.ooklaserver.net"
+  - "+.srv.nintendo.net"
+  - "*.n.n.srv.nintendo.net"
+  - "+.cdn.nintendo.net"
+  - "+.stun.playstation.net"
+  - "*.xboxlive.com"
+  - "xnotify.xboxlive.com"
+  - "*.square-enix.com"
+  - "*.finalfantasyxiv.com"
+  - "*.ff14.sdo.com"
+  - "ff.dorado.sdo.com"
 
 # =========================
-#  音乐服务（cn 未覆盖部分）
+#  STUN / TURN（必须真实 IP）
 # =========================
-- "musicapi.taihe.com"
-- "music.taihe.com"
-- "songsearch.kugou.com"
-- "trackercdn.kugou.com"
-- "streamoc.music.tc.qq.com"
-- "mobileoc.music.tc.qq.com"
-- "isure.stream.qqmusic.qq.com"
-- "dl.stream.qqmusic.qq.com"
-- "aqqmusic.tc.qq.com"
-- "amobile.music.tc.qqmusic.qq.com"
-- "*.xiami.com"
-- "api-jooxtt.sanook.com"
-- "api.joox.com"
-- "joox.com"
+  - "global.turn.twilio.com"
+  - "global.stun.twilio.com"
+  - "stun.l.google.com"
+  - "stun1.l.google.com"
+  - "stun2.l.google.com"
+  - "stun3.l.google.com"
+  - "stun4.l.google.com"
 
 # =========================
-#  腾讯 / 登录（cn 未覆盖部分）
+#  路由器厂商（必须真实 IP）
 # =========================
-- "localhost.ptlogin2.qq.com"
-- "localhost.sec.qq.com"
-- "localhost.*.weixin.qq.com"
+  - "heartbeat.belkin.com"
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "*.router.asus.com"
+  - "*.tplinkcloud.com"
+  - "*.tplinkdns.com"
+  - "*.miwifi.com"
 
 # =========================
-#  游戏平台 / 游戏服务（category-games 未覆盖部分）
+#  Apple 关键域名
 # =========================
-- "+.srv.nintendo.net"
-- "*.n.n.srv.nintendo.net"
-- "+.cdn.nintendo.net"
-- "+.stun.playstation.net"
-- "xbox.*.*.microsoft.com"
-- "*.*.xboxlive.com"
-- "xbox.*.microsoft.com"
-- "xnotify.xboxlive.com"
-- "*.square-enix.com"
-- "*.finalfantasyxiv.com"
-- "*.ffxiv.com"
-- "*.ff14.sdo.com"
-- "ff.dorado.sdo.com"
-- "*.riotgames.com"
-- "*.valorant.com"
-- "*.ea.com"
-- "*.origin.com"
-- "*.steamcontent.com"
-- "*.steamserver.net"
+  - "guzzoni.apple.com"
+  - "gs.apple.com"
+  - "xp.apple.com"
+  - "configuration.apple.com"
 
 # =========================
-#  STUN / TURN（无 geosite 覆盖）
+#  Google 关键域名
 # =========================
-- "global.turn.twilio.com"
-- "global.stun.twilio.com"
-- "stun.*.*"
-- "stun.*.*.*"
-- "+.stun.*.*"
-- "+.stun.*.*.*"
-- "+.stun.*.*.*.*"
-- "+.stun.*.*.*.*.*"
-- "stun.l.google.com"
-- "stun1.l.google.com"
-- "stun2.l.google.com"
-- "stun3.l.google.com"
-- "stun4.l.google.com"
-
-# =========================
-#  路由器厂商（无 geosite 覆盖）
-# =========================
-- "heartbeat.belkin.com"
-- "*.linksys.com"
-- "*.linksyssmartwifi.com"
-- "*.router.asus.com"
-- "*.tplinkcloud.com"
-- "*.tplinkdns.com"
-- "*.miwifi.com"
-
-# =========================
-#  Apple 相关（apple-cn 未覆盖部分）
-# =========================
-- "captive.apple.com"
-- "guzzoni.apple.com"
-- "gs.apple.com"
-- "xp.apple.com"
-- "configuration.apple.com"
-
-# =========================
-#  Google 相关（google-cn 未覆盖部分）
-# =========================
-- "mtalk.google.com"
-- "firebaseinstallations.googleapis.com"
-- "firebase-settings.crashlytics.com"
-
-# =========================
-#  云盘 / 云服务（无 geosite 覆盖）
-# =========================
-- "*.onedrive.com"
-- "*.sharepoint.com"
-- "*.dropbox.com"
-- "*.dropboxapi.com"
-- "*.box.com"
-- "*.boxcloud.com"
-
-# =========================
-#  IoT / 智能家居（cn 未覆盖部分）
-# =========================
-- "*.tuyaus.com"
-- "*.tuyaeu.com"
-- "*.tuyacn.com"
-- "*.tuyacn.cloud"
-- "*.yeelight.com"
-- "Mijia Cloud"
-
-# =========================
-#  AdGuard / 广告过滤（无 geosite 覆盖）
-# =========================
-- "local.adguard.org"
-- "adguardteam.github.io"
-- "adrules.top"
-- "anti-ad.net"
-- "static.adtidy.org"
-
-# =========================
-#  迅雷（无 geosite 覆盖）
-# =========================
-- "+.sandai.net"
-- "+.n0808.com"
-
-# =========================
-#  UU 加速器（无 geosite 覆盖）
-# =========================
-- "+.uu.163.com"
-- "ps.res.netease.com"
-
-# =========================
-#  杂项（无 geosite 覆盖）
-# =========================
-- "shark007.net"
-- "+.lefoo.cn"
-- "+.vipmro.com"
+  - "mtalk.google.com"
+  - "firebaseinstallations.googleapis.com"
+  - "firebase-settings.crashlytics.com"
 
 # =========================
 #  GEOSITE 引用（保留）
 # =========================
-- "geosite:connectivity-check"
-- "geosite:apple-cn"
-- "geosite:microsoft@cn"
-- "geosite:google-cn"
-- "geosite:category-games"
-- "geosite:speedtest"
-- "geosite:private"
-- "geosite:cn"
+  - "geosite:connectivity-check"
+  - "geosite:apple-cn"
+  - "geosite:microsoft@cn"
+  - "geosite:google-cn"
+  - "geosite:category-games"
+  - "geosite:speedtest"
+  - "geosite:private"
+  - "geosite:cn"
