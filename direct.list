@@ -144,12 +144,19 @@ DOMAIN-SUFFIX,manfuz.co
 # 金融类
 # 汇丰香港，走代理会被风控 / add by Telegram user: victory / Date: 2025-09-20 08:35:06
 DOMAIN-SUFFIX,hsbc.com.hk
+DOMAIN-SUFFIX,vv1865.com
 # 中国银行香港，如果走代理，会被风控 / add by Telegram user: victory / Date: 2025-09-20 08:33:44
 DOMAIN-SUFFIX,bochk.com
 # 泰国开泰银行，如果走代理，会被风控
 DOMAIN-SUFFIX,kasikornbank.com
 # 香港渣打银行
 DOMAIN-SUFFIX,sc.com
+
+# 其他
+# Server酱
+DOMAIN-SUFFIX,sct.ftqq.com
+# 爱普生打印机
+DOMAIN-SUFFIX,p01.epsonconnect.com
 
 # 机器人添加域名
 # 以下域名由用户通过机器人添加，无备案且 NS 不属于中国大陆，或解析结果不属于中国大陆
@@ -208,6 +215,26 @@ DOMAIN-SUFFIX,day.app
 
 # 阴阳师工具 / add by Telegram user: 奶茶 / Date: 2025-11-30 15:30:08
 DOMAIN-SUFFIX,yyshub.top
+# CDN / add by Telegram user: 𝓚𝓮𝓵𝓿𝓲𝓷𝓟 / Date: 2025-12-17 11:16:00
+DOMAIN-SUFFIX,bunny.net
+# 视频网站 / add by Telegram user: 哈Lay / Date: 2026-01-07 19:18:30
+DOMAIN-SUFFIX,8kc.top
+# add by Telegram user: hlly / Date: 2026-01-06 22:51:31
+DOMAIN-SUFFIX,kcbd.top
+# 视频网站 / add by Telegram user: 哈Lay / Date: 2026-01-06 21:13:37
+DOMAIN-SUFFIX,theluyuan.com
+# add by Telegram user: IllIllIlIl / Date: 2026-01-05 08:54:12
+DOMAIN-SUFFIX,cmbc.run
+# 个人网站 / add by Telegram user: Awt / Date: 2026-01-03 00:58:13
+DOMAIN-SUFFIX,awstme.top
+# 北京公交地铁APP："亿通行" / add by Telegram user: zero / Date: 2026-01-02 23:03:30
+DOMAIN-SUFFIX,easytomessage.com
+# iOS旧版App服务 / add by Telegram user: 雪菜 / Date: 2025-12-27 11:39:43
+DOMAIN-SUFFIX,timbrd.com
+# aicoding / add by Telegram user: Makka / Date: 2025-12-27 10:11:32
+DOMAIN-SUFFIX,anyrouter.top
+# 社区 / add by Telegram user: 哈Lay / Date: 2025-12-29 12:54:22
+DOMAIN-SUFFIX,a0d.top
 
 # =======================================
 # 以下是应当直连的冷门国内域名规则
@@ -217,32 +244,26 @@ DOMAIN-SUFFIX,yyshub.top
 # 以下是准备向 GeoSite 上游仓库提交 PR 的国内冷门域名，收录后会注释对应内容
 # ---------------------------------------
 # 以下域名待提交 PR
-# add by Telegram user: Aethersailor / Date: 2025-12-22 11:49:20
-DOMAIN-SUFFIX,hhtvc.com
-# add by Telegram user: Aethersailor / Date: 2025-12-22 11:37:14
-DOMAIN-SUFFIX,dfhog.com
-# add by Telegram user: Aethersailor / Date: 2025-12-22 01:34:51
-DOMAIN-SUFFIX,morefuntengyun.com
-# 资源网站 / add by Telegram user: 哈Lay / Date: 2025-12-21 23:07:01
-DOMAIN-SUFFIX,51tbox.com
-# 巨正源旗下电商平台 / add by Telegram user: 做一晚泥工 / Date: 2025-12-21 16:54:25
-DOMAIN-SUFFIX,jduoduo.com
-# 自媒体新闻网站 / add by Telegram user: 哈Lay / Date: 2025-12-18 22:29:42
-DOMAIN-SUFFIX,kejiweixun.com
-# 分享网站 / add by Telegram user: 哈Lay / Date: 2025-12-18 22:10:39
-DOMAIN-SUFFIX,jiliuwang.net
-# 购物网站 / add by Telegram user: 哈Lay / Date: 2025-12-18 22:06:20
-DOMAIN-SUFFIX,ximogo.com
-# 安卓车机app应用市场 / add by Telegram user: 哈Lay / Date: 2025-12-18 21:59:15
-DOMAIN-SUFFIX,eagsen.com
-# add by Telegram user: Aethersailor / Date: 2025-12-18 10:33:27
-DOMAIN-SUFFIX,ycjintou.com
-# add by Telegram user: 𝓚𝓮𝓵𝓿𝓲𝓷𝓟 / Date: 2025-12-17 21:15:29
-DOMAIN-SUFFIX,weshape3d.com
-# CDN / add by Telegram user: 𝓚𝓮𝓵𝓿𝓲𝓷𝓟 / Date: 2025-12-17 11:16:00
-DOMAIN-SUFFIX,bunny.net
+# 星耀充值 / add by Telegram user: r / Date: 2026-01-13 19:50:19
+DOMAIN-SUFFIX,xingyaozhilian.com
+# 小倍养基 / add by Telegram user: Mairs / Date: 2026-01-13 17:11:39
+DOMAIN-SUFFIX,xiaobeiyangji.com
+# 小白打印 / add by Telegram user: r / Date: 2026-01-13 02:29:27
+DOMAIN-SUFFIX,xbcloudprint.com
+# 轩辕的编程宇宙 / add by Telegram user: Mayfly / Date: 2026-01-12 20:44:53
+DOMAIN-SUFFIX,xuanyuancode.com
+# add by Telegram user: 嘿嘿 / Date: 2026-01-11 20:42:55
+DOMAIN-SUFFIX,scratch5.com
+# 米思齐官网 / add by Telegram user: 嘿嘿 / Date: 2026-01-11 20:41:54
+DOMAIN-SUFFIX,mixly.org
+# 铁威马NAS远程访问服务 / add by Telegram user: 嘿嘿 / Date: 2026-01-11 20:40:12
+DOMAIN-SUFFIX,tnas.link
+# 铁威马官网 / add by Telegram user: 嘿嘿 / Date: 2026-01-11 20:39:01
+DOMAIN-SUFFIX,terra-master.com
+# 铁威马NAS远程访问服务 / add by Telegram user: 嘿嘿 / Date: 2026-01-11 20:36:32
+DOMAIN-SUFFIX,tnas.online
 
-# 2025.12.17 分类整理完毕
+# 2026.1.11 分类整理完毕
 # ---------------------------------------
 
 # Merged LAN Rules
