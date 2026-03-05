@@ -6,3 +6,6 @@ DOMAIN,planet.zerotier.com
 
 # DST-PORT端口
 DST-PORT,9993
+
+# SRC-PORT端口
+SRC-PORT,9993
